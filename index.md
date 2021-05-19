@@ -23,7 +23,7 @@ end)
 
 Get the latest release of Topbar Icons [here](https://github.com/BronzeFedora/Topbar-Icons/releases/).
 
-Drag the TopbarIcons.lua file into Roblox Studio and then require the TopbarIcons module from a local script.
+Drag the TopbarIcons file into Roblox Studio and then require the TopbarIcons module from a local script.
 
 # API
 
