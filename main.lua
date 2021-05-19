@@ -38,7 +38,7 @@ local function createIcon()
 	iconOverlay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	iconOverlay.BackgroundTransparency = 1
 	iconOverlay.Parent = button
-	
+
 	return button
 end
 
@@ -47,13 +47,13 @@ local TopbarIcons = {}
 function TopbarIcons.new()
 	local icon = createIcon()
 	icon.Parent = iconList
-	
+
 	local isButtonSelected = false
-	
+
 	local buttonSelected = Instance.new("BindableEvent")
 	local buttonUnselected = Instance.new("BindableEvent")
 	local buttonClicked = Instance.new("BindableEvent")
-	
+
 	icon.MouseButton1Click:Connect(function()
 		buttonClicked:Fire()
 		if isButtonSelected then
@@ -64,39 +64,39 @@ function TopbarIcons.new()
 			buttonSelected:Fire()
 		end
 	end)
-	
+
 	icon.MouseEnter:Connect(function()
 		icon.IconOverlay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		icon.IconOverlay.BackgroundTransparency = 0.9
 	end)
-	
+
 	icon.MouseLeave:Connect(function()
 		icon.IconOverlay.BackgroundTransparency = 1
 	end)
-	
+
 	icon.MouseButton1Down:Connect(function()
 		icon.IconOverlay.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 		icon.IconOverlay.BackgroundTransparency = 0.7
 	end)
-	
+
 	icon.MouseButton1Up:Connect(function()
 		icon.IconOverlay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		icon.IconOverlay.BackgroundTransparency = 0.9
 	end)
-	
+
 	local functions = {}
-	
-	function functions.setIcon(imageId)
+
+	function functions.setImage(imageId)
 		icon.Icon.Image = tostring(imageId)
 	end
 	function functions.forceSelection(boolean)
 		isButtonSelected = boolean
 	end
-	
+
 	functions.selected = buttonSelected.Event
-	functions.unselected = buttonUnselected.Event
+	functions.deselected = buttonUnselected.Event
 	functions.clicked = buttonClicked.Event
-	
+
 	return functions
 end
 
