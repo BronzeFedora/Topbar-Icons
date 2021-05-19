@@ -42,9 +42,9 @@ local function createIcon()
 	return button
 end
 
-local IconService = {}
+local TopbarIcons = {}
 
-function IconService.new()
+function TopbarIcons.new()
 	local icon = createIcon()
 	icon.Parent = iconList
 	
@@ -86,10 +86,10 @@ function IconService.new()
 	
 	local functions = {}
 	
-	function functions:SetIcon(imageId)
+	function functions.setIcon(imageId)
 		icon.Icon.Image = tostring(imageId)
 	end
-	function functions:ForceSelection(boolean)
+	function functions.forceSelection(boolean)
 		isButtonSelected = boolean
 	end
 	
@@ -100,4 +100,4 @@ function IconService.new()
 	return functions
 end
 
-return IconService
+return TopbarIcons
