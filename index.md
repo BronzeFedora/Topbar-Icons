@@ -37,9 +37,9 @@ Constructs an icon
 
 ### Methods
 
-**setIcon**
+**setImage**
 ```lua
-Icon.setIcon(imageId)
+Icon.setImage(imageId)
 ```
 Sets the icon's image to a string (e.g. `"rbxassetid//0"`).
 
@@ -65,9 +65,9 @@ Icon.selected:Connect(function()
 end)
 ```
 
-**unselected**
+**deselected**
 ```lua
-Icon.unselected:Connect(function()
+Icon.deselected:Connect(function()
     print("The icon was deselected.")
 end)
 ```
